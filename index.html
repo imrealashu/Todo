@@ -1,0 +1,22 @@
+<html ng-app="todo">
+	<head>
+		<script type="text/javascript" src="/angular.min.js"></script>
+		<script type="text/javascript" src="/app.js"></script>
+	</head>
+	<body>
+		
+		<div ng-controller="DefaultController">
+			<div>
+				<input type="text" ng-model="todo_name"/>
+			<input type="button" value="Add" ng-click="addTodo()"/>
+			</div>
+
+			<div ng-repeat="todo in todos">
+				<input type="checkbox" ng-click="todoDone(todo._id,todo.status)"  ng-checked="{{todo.status}}"/>
+				{{ todo.title }}
+				<input type="button" ng-click="todoDelete(todo._id,todo.title)" value=" - "/>
+			</div>
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imrealashu/Todo"
+  },
+  "author": "Ashish Singh, Swarna K Debroy, Abhishek Banerjee",
+  "license": "GNU GPL V3",
+  "bugs": {
+    "url": "https://github.com/imrealashu/Todo/issues"
+  },
+  "homepage": "https://github.com/imrealashu/Todo",
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "express": "^4.10.2",
+    "mongoose": "^3.8.19"
+  }
+}

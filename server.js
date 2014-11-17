@@ -47,7 +47,6 @@ app.post('/todo/', function(req, reso){
 			//console.error(err);
 		}
 		else{
-			console.log(res);
 			Todo.find({},{title:1,status:1},'', function (err, todos) {
 				if (err) return handleError(err);
 				reso.json(todos);

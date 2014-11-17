@@ -72,7 +72,6 @@ app.put('/todo/', function(req, reso){
 
 app.delete('/todo/:id', function(req, reso){
 	var g = req.params.id;
-	console.log('yahin aya h'+g);
 	var co = {_id: g};
 	Todo.remove(co, function(err, res){
 		if(err){

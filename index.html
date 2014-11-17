@@ -1,22 +1,36 @@
 <html ng-app="todo">
-	<head>
-		<script type="text/javascript" src="/angular.min.js"></script>
-		<script type="text/javascript" src="/app.js"></script>
-	</head>
-	<body>
-		
-		<div ng-controller="DefaultController">
-			<div>
-				<input type="text" ng-model="todo_name"/>
-			<input type="button" value="Add" ng-click="addTodo()"/>
-			</div>
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 
-			<div ng-repeat="todo in todos">
-				<input type="checkbox" ng-click="todoDone(todo._id,todo.status)"  ng-checked="{{todo.status}}"/>
-				{{ todo.title }}
-				<input type="button" ng-click="todoDelete(todo._id,todo.title)" value=" - "/>
-			</div>
+	<script type="text/javascript" src="/angular.min.js"></script>
+	<script type="text/javascript" src="/app.js"></script>
+</head>
+<body>
 
+	<div ng-controller="DefaultController" class="container">
+		<div class="jumbotron">
+			<h1 class="text-center">Todo Application</h1>
+			<p>Simple TODO List Application using M.E.A.N (Mongo, Express, Angular, Node) Stack. User can add Todo, Check and Uncheck and Delete List.</p>
+			<form role="form">
+				<div class="col-lg-10">
+					<input type="text" class="form-control" ng-model="todo_name">
+				</div>
+				<div class="col-lg-2">
+					<input type="button" class="btn btn-primary" value="Add Todo" ng-click="addTodo()"/>
+				</div>
+			</form>
 		</div>
-	</body>
+		<div class="row col-lg-5 col-lg-offset-3">
+			<ul class="list-unstyled">
+				<li ng-repeat="todo in todos" style=" border-bottom: 1px solid lightgrey;">
+					<input type="checkbox" ng-click="todoDone(todo._id,todo.status)"  ng-checked="{{todo.status}}"/>
+					<label class="todoCheckboxlabel " >{{todo.title}}</label>
+					<button type="button" style="color:red" class="close pull-right" aria-hidden="true" ng-click="todoDelete(todo._id,todo.title)">&times;</button>
+				</li>
+			</ul>
+		</div>
+
+
+	</div>
+</body>
 </html>
